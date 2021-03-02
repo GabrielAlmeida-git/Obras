@@ -43,7 +43,7 @@ class ObraUpdate extends Component {
   render() {
     return (
       <Wrapper>
-      <div><a>Visão Geral</a> / <a>Atualizações</a></div>
+      <div>Visão Geral / Atualizações</div>
       <AdicionarUpdate/>
           <Main>
           {this.state.updates.map((item)=>{
