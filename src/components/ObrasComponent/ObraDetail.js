@@ -40,8 +40,7 @@ class ObraDetail extends Component{
   
 }
 atualizacoes = (id) => {
-    let url = '/update/:'+id
-    window.location.href = url;
+  window.location.href = '/update/:'+id
   }
   
   render(){

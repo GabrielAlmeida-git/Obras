@@ -10,7 +10,6 @@ class ObraUpdate extends Component {
       url: window.location.href.split(':'),
       updates:[]
     }
-
     
     let firebaseConfig = {
       apiKey: "AIzaSyDf7uwGiMEoFMvWxmKz04RiI4S390NCaQM",
