@@ -27,7 +27,7 @@ import styled from 'styled-components';
 
 
     
-      firebase.database().ref('Obras/'+this.state.url[3]).on('value', (snapshot) =>{
+      firebase.database().ref('Obras/'+this.state.url[2]).on('value', (snapshot) =>{
         let state = this.state;
         state.key = snapshot.key;
         state.nome = snapshot.val().nomeObra;
@@ -39,7 +39,7 @@ import styled from 'styled-components';
 }
 
   render() {
-    const {nome } = this.state;
+    const { nome } = this.state;
     return (
       <Container>
         <Titulo>
