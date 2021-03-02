@@ -84,12 +84,12 @@ margin-top: 2rem;
 const Updates = styled.div`
 display: flex;
 justify-content: space-between;
-border-radius: 25px;
+border-radius: 12px;
 border-style: outset;
 padding-left: 1rem;
 padding-right: 1rem;
 margin-top: 1rem;
-height 3.0rem;
+height auto;
 align-items: center;
 background: white;
 `
