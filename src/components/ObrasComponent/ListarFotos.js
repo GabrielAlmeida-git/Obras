@@ -27,7 +27,7 @@ export default class ListarFotos extends Component {
       firebase.initializeApp(firebaseConfig);
     }
     
-    firebase.database().ref('images/'+this.state.url[3]).on('value', (snapshot) =>{
+    firebase.database().ref('images/'+this.state.url[2]).on('value', (snapshot) =>{
       let state = this.state;
       state.images = [];
       snapshot.forEach((childItem)=> {
@@ -44,7 +44,7 @@ export default class ListarFotos extends Component {
 
   onFileChange = async (e) => {
     const file = e.target.files[0]
-    const storageRef = firebase.storage().ref(this.state.url[3])
+    const storageRef = firebase.storage().ref(this.state.url[2])
     const fileRef = storageRef.child(file.name)
     await fileRef.put(file)
     const imageUrl = await fileRef.getDownloadURL();
@@ -56,7 +56,7 @@ export default class ListarFotos extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    let images = firebase.database().ref("images/"+this.state.url[3]).child(this.state.data);
+    let images = firebase.database().ref("images/"+this.state.url[2]).child(this.state.data);
     images.set({
       data: this.state.data,
       imageUrl: this.state.fileUrl
