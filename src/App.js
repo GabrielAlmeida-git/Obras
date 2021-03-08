@@ -56,6 +56,7 @@ export default App;
 
 const Wrapper = styled.div`
 background-color:#E5E5E5;
+height: auto;
 `
 
 const Container = styled.div`
@@ -69,4 +70,7 @@ const Main = styled.div`
 width: 100%;
 margin-left: 3.0rem;
 margin-right: 3.0rem;
+@media(max-width: 800px) {
+  margin-left: 0;
+}
 `

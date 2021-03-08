@@ -40,9 +40,9 @@ export default class AdicionarUpdate extends Component {
 
 
 cadastrar(e){
-  firebase.database().ref('Obras/'+this.state.url[2]).child('updates')
+  firebase.database().ref('Obras/'+this.state.url[3]).child('updates')
 
-  let obras = firebase.database().ref('Obras/'+this.state.url[2]).child('updates');
+  let obras = firebase.database().ref('Obras/'+this.state.url[3]).child('updates');
   let chave = obras.push().key;
   obras.child(chave).set({
     data: this.state.data,
@@ -53,15 +53,7 @@ cadastrar(e){
 
   e.preventDefault();
 }
-onFileChange = (e) => {
-  const file = e.target.files[0]
-  const storageRef = firebase.storage().ref(this.state.url[2])
-  const fileRef = storageRef.child(file.name)
-  fileRef.put(file).then(() => {
-    console.log("uploaded file", file.name)
-    console.log(this.state.url[3])
-  })
-}
+
   render() {
     return (
       <Wrapper>
@@ -82,7 +74,7 @@ onFileChange = (e) => {
               <div><input type="text" value={this.state.dataInicio} onChange={(e) => this.setState({dataInicio: e.target.value})}/></div>
               <button type="submit">Cadastrar update</button>
               </TextBoxes>
-              <input type="file" onChange={this.onFileChange} />
+              
               </FormHidden>
             </form>
         </FormObra> }

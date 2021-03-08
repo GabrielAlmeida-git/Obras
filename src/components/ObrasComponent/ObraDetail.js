@@ -1,6 +1,7 @@
 import firebase from 'firebase';
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import ListarFotos from './ListarFotos';
 
 class ObraDetail extends Component{
   constructor(props){
@@ -26,7 +27,7 @@ class ObraDetail extends Component{
 
 
     
-      firebase.database().ref('Obras/'+this.state.url[2]).on('value', (snapshot) =>{
+      firebase.database().ref('Obras/'+this.state.url[3]).on('value', (snapshot) =>{
         let state = this.state;
         state.key = snapshot.key;
         state.nome = snapshot.val().nomeObra;
@@ -51,6 +52,9 @@ atualizacoes = (id) => {
             <Main key={key}>
               <div>id: {key} </div><div>Obra: {nome}</div><div>Endereço: {endereco}</div><div>Cliente: {cliente}</div><div>Data de inicio: {dataInicio}</div>
               </Main>
+              <FotoSection>
+                <ListarFotos/>
+              </FotoSection>
       </Wrapper>
     )
   }
@@ -66,4 +70,8 @@ const Main = styled.div`
 margin-bottom: 1.5rem;
 margin-top: 2rem;
 ` 
+
+
+const FotoSection = styled.div``
+
 

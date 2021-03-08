@@ -27,7 +27,7 @@ class ObraUpdate extends Component {
 
   
     
-      firebase.database().ref('Obras/'+this.state.url[2]).child('updates').on('value', (snapshot) =>{
+      firebase.database().ref('Obras/'+this.state.url[3]).child('updates').on('value', (snapshot) =>{
         let state = this.state;
         state.updates = [];
         snapshot.forEach((childItem)=> {
