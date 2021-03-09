@@ -40,9 +40,9 @@ export default class AdicionarUpdate extends Component {
 
 
 cadastrar(e){
-  firebase.database().ref('Obras/'+this.state.url[2]).child('updates')
+  firebase.database().ref('Obras/'+this.state.url[3]).child('updates')
 
-  let obras = firebase.database().ref('Obras/'+this.state.url[2]).child('updates');
+  let obras = firebase.database().ref('Obras/'+this.state.url[3]).child('updates');
   let chave = obras.push().key;
   obras.child(chave).set({
     data: this.state.data,
@@ -90,7 +90,14 @@ const Wrapper = styled.div``
 const FormObra = styled.div``
 
 const FormHidden = styled.div`
+margin-right: 3.0rem;
 display:flex;
+background: white;
+position: absolute;
+width: 100%;
+margin-top: 1.5rem;
+background: white;
+border-style: groove; 
 `
 
 const Description = styled.div``

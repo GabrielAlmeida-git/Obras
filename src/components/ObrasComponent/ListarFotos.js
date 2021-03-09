@@ -27,7 +27,7 @@ export default class ListarFotos extends Component {
       firebase.initializeApp(firebaseConfig);
     }
     
-    firebase.database().ref('images/'+this.state.url[2]).on('value', (snapshot) =>{
+    firebase.database().ref('images/'+this.state.url[3]).on('value', (snapshot) =>{
       let state = this.state;
       state.images = [];
       snapshot.forEach((childItem)=> {
@@ -38,30 +38,37 @@ export default class ListarFotos extends Component {
       });
       this.setState(state);
     })
-    
+
 
   }
 
   onFileChange = async (e) => {
     const file = e.target.files[0]
-    const storageRef = firebase.storage().ref(this.state.url[2])
+    const storageRef = firebase.storage().ref(this.state.url[3])
     const fileRef = storageRef.child(file.name)
     await fileRef.put(file)
     const imageUrl = await fileRef.getDownloadURL();
     this.setState({fileUrl: imageUrl})
     console.log(imageUrl)
-
+    let date = new Date().toLocaleString();
+    let dataCorrigida = date.replaceAll('/', '-')
+    this.setState({data: dataCorrigida})
+    console.log(this.state.data);
    
   }
 
   onSubmit = (e) => {
     e.preventDefault()
-    let images = firebase.database().ref("images/"+this.state.url[2]).child(this.state.data);
+    
+    
+    let images = firebase.database().ref("images/"+this.state.url[3]).child(this.state.data);
     images.set({
       data: this.state.data,
       imageUrl: this.state.fileUrl
     })
   }
+
+  
   render() {
     return (
       <Wrapper>
@@ -121,7 +128,7 @@ p{
 }
 img{
   width: 200px;
-  height: 200px;
+  height: 350px;
 }
 `
 

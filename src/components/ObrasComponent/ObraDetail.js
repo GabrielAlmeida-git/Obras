@@ -27,7 +27,7 @@ class ObraDetail extends Component{
 
 
     
-      firebase.database().ref('Obras/'+this.state.url[2]).on('value', (snapshot) =>{
+      firebase.database().ref('Obras/'+this.state.url[3]).on('value', (snapshot) =>{
         let state = this.state;
         state.key = snapshot.key;
         state.nome = snapshot.val().nomeObra;
@@ -40,15 +40,15 @@ class ObraDetail extends Component{
 
   
 }
-atualizacoes = (id) => {
-  window.location.href = '/update/:'+id
-  }
+    atualizacoes = (id) => {
+      window.location.href = '/update/:'+id
+      }
   
   render(){
     const { key, nome, endereco, cliente, dataInicio} = this.state;
     return(
       <Wrapper>
-        <div>Visão Geral / <button onClick={() => this.atualizacoes(key)}>Atualizações</button></div>
+        <div> <button>Visão Geral</button> / <button onClick={() => this.atualizacoes(key)}>Atualizações</button></div>
             <Main key={key}>
               <div>id: {key} </div><div>Obra: {nome}</div><div>Endereço: {endereco}</div><div>Cliente: {cliente}</div><div>Data de inicio: {dataInicio}</div>
               </Main>

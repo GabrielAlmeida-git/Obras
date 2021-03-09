@@ -27,7 +27,7 @@ class ObraUpdate extends Component {
 
   
     
-      firebase.database().ref('Obras/'+this.state.url[2]).child('updates').on('value', (snapshot) =>{
+      firebase.database().ref('Obras/'+this.state.url[3]).child('updates').on('value', (snapshot) =>{
         let state = this.state;
         state.updates = [];
         snapshot.forEach((childItem)=> {
@@ -40,10 +40,15 @@ class ObraUpdate extends Component {
         this.setState(state);
       })
 }
+
+atualizacoes = () => {
+  window.location.href = '/Obras/:'+this.state.url[3];
+  }
+  
   render() {
     return (
       <Wrapper>
-      <div>Visão Geral / Atualizações</div>
+      <div> <button onClick={() => this.atualizacoes()}>Visão Geral</button> / <button>Atualizações</button></div>
       <AdicionarUpdate/>
           <Main>
           {this.state.updates.map((item)=>{

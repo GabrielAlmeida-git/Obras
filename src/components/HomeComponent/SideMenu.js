@@ -43,7 +43,10 @@ background: #239C7B;
 const User = styled.div`
 border-bottom: solid;
 border-color: grey;
-height: auto;
+height: 3.0rem;
+@media(max-width: 800px) {
+  height: auto;
+}
 
 `
 

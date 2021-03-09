@@ -27,7 +27,7 @@ import styled from 'styled-components';
 
 
     
-      firebase.database().ref('Obras/'+this.state.url[2]).on('value', (snapshot) =>{
+      firebase.database().ref('Obras/'+this.state.url[3]).on('value', (snapshot) =>{
         let state = this.state;
         state.key = snapshot.key;
         state.nome = snapshot.val().nomeObra;
@@ -61,6 +61,9 @@ const Titulo = styled.div`
 background: #239C7B;
 width: 100%;
 height: 3.0rem;
+@media(max-width: 800px) {
+  height: auto;
+}
 text-align: center;
 padding-top: 1.0rem;
 font-size: 1.4em;
