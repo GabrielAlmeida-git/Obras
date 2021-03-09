@@ -63,7 +63,8 @@ const Container = styled.div`
 width: 100%;
 height: 100vh;
 display: flex;
-grid-template-rows: 25px auto
+grid-template-rows: 25px auto;
+background-color:#E5E5E5;
 `
 
 const Main = styled.div`
