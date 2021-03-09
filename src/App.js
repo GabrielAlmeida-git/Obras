@@ -56,7 +56,6 @@ export default App;
 
 const Wrapper = styled.div`
 background-color:#E5E5E5;
-height: auto;
 height: 100vh;
 `
 
