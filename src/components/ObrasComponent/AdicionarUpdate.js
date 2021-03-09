@@ -40,9 +40,9 @@ export default class AdicionarUpdate extends Component {
 
 
 cadastrar(e){
-  firebase.database().ref('Obras/'+this.state.url[3]).child('updates')
+  firebase.database().ref('Obras/'+this.state.url[2]).child('updates')
 
-  let obras = firebase.database().ref('Obras/'+this.state.url[3]).child('updates');
+  let obras = firebase.database().ref('Obras/'+this.state.url[2]).child('updates');
   let chave = obras.push().key;
   obras.child(chave).set({
     data: this.state.data,
