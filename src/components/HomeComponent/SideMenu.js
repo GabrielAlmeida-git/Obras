@@ -43,7 +43,7 @@ background: #239C7B;
 const User = styled.div`
 border-bottom: solid;
 border-color: grey;
-height: 3.0rem;
+height: auto;
 
 `
 
