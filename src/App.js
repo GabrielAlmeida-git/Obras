@@ -10,6 +10,16 @@ import ObrasDetail from './components/ObrasComponent/ObraDetail';
 import ObraUpdate from './components/ObrasComponent/ObraUpdate';
 
 function App() {
+
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  window.addEventListener('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
+  
   return (
     <div className="App">
       <Wrapper>
@@ -57,6 +67,7 @@ export default App;
 const Wrapper = styled.div`
 background-color:#E5E5E5;
 height: 100vh;
+height: calc(var(--vh, 1vh) * 100);
 `
 
 const Container = styled.div`
