@@ -10,6 +10,7 @@ export default class ListarFotos extends Component {
       setFileUrl: '',
       data: '',
       setData: '',
+      description: '',
       url: window.location.href.split(':'),
       images: []
     }
@@ -34,6 +35,7 @@ export default class ListarFotos extends Component {
         state.images.push({
           imageUrl: childItem.val().imageUrl,
           data: childItem.val().data,
+          description: childItem.val().description,
         })
       });
       this.setState(state);
@@ -53,7 +55,6 @@ export default class ListarFotos extends Component {
     let date = new Date().toLocaleString();
     let dataCorrigida = date.replaceAll('/', '-')
     this.setState({data: dataCorrigida})
-    console.log(this.state.data);
    
   }
 
@@ -64,7 +65,8 @@ export default class ListarFotos extends Component {
     let images = firebase.database().ref("images/"+this.state.url[2]).child(this.state.data);
     images.set({
       data: this.state.data,
-      imageUrl: this.state.fileUrl
+      imageUrl: this.state.fileUrl,
+      description: this.state.description
     })
   }
 
@@ -76,16 +78,19 @@ export default class ListarFotos extends Component {
          FOTOS
         </Header>
         <form onSubmit={this.onSubmit}>
-          <input type="file" onChange={this.onFileChange} />
-          <input type="text" name="data"  placeholder="DATA" value={this.state.dataInicio} onChange={(e) => this.setState({data: e.target.value})}/>
-          <button>Adicionar</button>
+        <Form>
+          <div><label for="arquivo">Selecionar arquivo</label><input type="file" id="arquivo" name="arquivo" onChange={this.onFileChange} /></div>
+          <div><input type="text" name="data"  placeholder="DESCRIÇÃO" value={this.state.description} onChange={(e) => this.setState({description: e.target.value})}/></div>
+          <div><button>Adicionar</button></div>
+          </Form>
         </form>
+        
        <Fotos>
           {this.state.images.map((item) => {
             return(
               <FotoList key={item.data}>
-                <img src={item.imageUrl} alt="foto do dia"/>
-                <p>{item.data}</p>
+                <div><img src={item.imageUrl} alt="foto do dia"/></div>
+                <div>Data: {item.data}<p>{item.description}</p></div>
               </FotoList>
             )
           })}
@@ -98,26 +103,67 @@ export default class ListarFotos extends Component {
 
 
 const Wrapper = styled.div`
-
+display: flex;
+flex-direction: column;
+width: 100%;
+text-align: center;
+font-weight: bold;
+font-family: bree serif;
+font-size: 15px;
 `
 const Header = styled.div`
-height: auto;
-background: #239C7B;
+height: 2.5rem;
+background: #FFF;
+color: #006666;
 text-align: center;
-font-size: 1.2rem;
+font-weight: bold;
+font-family: bree serif;
+font-size: 25px;
+display: flex;
+align-items: center;
+justify-content: center;
 `
+
+const Form = styled.div`
+margin-top: 1.5rem;
+display: flex;
+justify-content: space-between;
+@media(max-width: 800px) {
+  flex-direction: column;
+}
+button{
+  background: #FFF;
+  height: 2.5rem;
+  width: 10rem;
+  color: #006666;
+}
+input{ 
+  background: #FFF;
+  height: 2.5rem;
+  width: 10rem;
+  color: #006666;
+}
+input[type="file"]{
+display: none;
+}
+label{
+  color: #006666;
+  height: 2.5rem;
+  background: #FFF;
+  border: groove;
+}
+
+` 
 
 const Fotos = styled.div`
 display: flex;
-flex-direction: row;
-@media(max-width: 800px) {
-  flex-direction: column;
-  position: relative;
-  text-align: center;
-}
+flex-direction: column;
+
   ` 
 
 const FotoList = styled.div`
+display: flex;
+align-items: center;
 @media(max-width: 800px) {
   margin-left: 0;
 }
@@ -127,8 +173,9 @@ p{
   text-align: center;
 }
 img{
-  width: 200px;
-  height: 350px;
+  width: 400px;
+  height: 250px;
+  margin-right: 1.5rem;
 }
 `
 

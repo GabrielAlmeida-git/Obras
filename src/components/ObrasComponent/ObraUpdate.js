@@ -48,23 +48,20 @@ atualizacoes = () => {
   render() {
     return (
       <Wrapper>
-      <div> <button onClick={() => this.atualizacoes()}>Visão Geral</button> / <button>Atualizações</button></div>
+      <NavMenu>
+       <div> <button onClick={() => this.atualizacoes()}>Visão Geral</button> </div>  <div><button>Atualizações</button></div>
+      </NavMenu>
       <AdicionarUpdate/>
           <Main>
           {this.state.updates.map((item)=>{
             return(
               <Updates key={item.data}>
-                <UpdateTab>
                   <div>
-                    Atualização do dia: {item.data}
+                    Dia: {item.data}
                   </div>
                   <div>
                     Descrição: {item.update}
                   </div>
-                </UpdateTab>
-                <ButtonTab>
-                    <button>Ver Fotos</button>
-                </ButtonTab>
               </Updates>
             )
           })}
@@ -79,34 +76,53 @@ export default ObraUpdate
 
 
 const Wrapper = styled.div`
+width: 100%;
+overflow-y: scroll;
+height: 85vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+
+const NavMenu = styled.div`
+width: 80%;
+display: flex;
+justify-content: space-between;
+margin-top: 1.5rem;
+button{ 
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-family: bree serif;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 `
 
 const Main = styled.div`
 margin-bottom: 1.5rem;
 margin-top: 2rem;
+width: 80%;
 ` 
 
 const Updates = styled.div`
 display: flex;
-justify-content: space-between;
-border-radius: 12px;
-border-style: outset;
+flex-direction: column;
+border-radius: 5px;
 padding-left: 1rem;
 padding-right: 1rem;
 margin-top: 1rem;
-height auto;
-align-items: center;
-background: white;
-`
-
-const UpdateTab = styled.div`
-
-`
-
-
-const ButtonTab = styled.div`
-button{
-  border-radius: 2px;
-  background: #239C7B;
+justify-content: center;
+width: 100%;
+height: 5.0rem;
+background: rgba(0, 102, 102, 0.6);
+font-family: bree serif;
+font-size: 20;
+font-weight: bold;
+div{ 
+  padding-top: 0.5rem;
 }
 `
+

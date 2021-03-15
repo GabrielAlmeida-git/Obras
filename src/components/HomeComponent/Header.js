@@ -6,7 +6,7 @@ function header() {
     <div>
       <Container>
           <Titulo>
-            Diário de obras - Certa Engenharia
+            Diário de obras
           </Titulo>
       </Container>      
     </div>
@@ -21,15 +21,17 @@ const Container = styled.div`
 `
 
 const Titulo = styled.div`
-background: #239C7B;
+background: #009933;
 width: 100%;
-height: 3.0rem;
-@media(max-width: 800px) {
-  height: auto;
-}
+height: 5.0rem;
 text-align: center;
-padding-top: 1.0rem;
-font-size: 1.4em;
+font-size: 35px;
+font-family: bree serif;
+font-weight: bold;
+display: flex;
+align-items: center;
+justify-content: center;
+
 `
 
 

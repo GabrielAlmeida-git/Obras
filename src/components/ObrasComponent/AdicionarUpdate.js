@@ -61,20 +61,13 @@ cadastrar(e){
         { this.state.mostrarComponente && <FormObra>
             <form onSubmit={this.cadastrar}>
               <FormHidden>
-              <Description>
-              <div>Data:</div>
-              <div>Update: </div>
-              <div>Cliente: </div>
-              <div>Data de início: </div>
-              </Description>
               <TextBoxes>
-              <div><input type="text" value={this.state.data} onChange={(e) => this.setState({data: e.target.value})}/></div>
-              <div><input type="text" value={this.state.update} onChange={(e) => this.setState({update: e.target.value})}/></div>
-              <div><input type="text" value={this.state.cliente} onChange={(e) => this.setState({cliente: e.target.value})}/></div>
-              <div><input type="text" value={this.state.dataInicio} onChange={(e) => this.setState({dataInicio: e.target.value})}/></div>
-              <button type="submit">Cadastrar update</button>
+              <div><Label>Data: </Label><input type="text" value={this.state.data} onChange={(e) => this.setState({data: e.target.value})}/></div>
+              <div><Label>Update: </Label><input type="text" value={this.state.update} onChange={(e) => this.setState({update: e.target.value})}/></div>
+              <div><Label>Teste: </Label><input type="text" value={this.state.cliente} onChange={(e) => this.setState({cliente: e.target.value})}/></div>
+              <div><Label>Teste: </Label><input type="text" value={this.state.dataInicio} onChange={(e) => this.setState({dataInicio: e.target.value})}/></div>
+              <Submit><button type="submit">Cadastrar update</button></Submit>
               </TextBoxes>
-              
               </FormHidden>
             </form>
         </FormObra> }
@@ -85,21 +78,53 @@ cadastrar(e){
 
 
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+margin-top: 1.0rem;
+button{
+  border-radius: 5px;
+  background: #FFF;
+  color: #006666;
+  height: 2.5rem;
+  border: none;
+}
 
-const FormObra = styled.div``
+
+`
+
+const FormObra = styled.div`
+justify-content: center;
+align-items: center; 
+display:flex;
+flex-direction: row;
+`
 
 const FormHidden = styled.div`
-margin-right: 3.0rem;
 display:flex;
 background: white;
-position: absolute;
-width: 100%;
 margin-top: 1.5rem;
 background: white;
 border-style: groove; 
+border-radius: 2px;
+width: auto;
+height: 200px;
+align-items: center; 
+justify-content: center;
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+padding-top: 1.5rem;
+padding-bottom: 1.5rem;
 `
 
-const Description = styled.div``
 
-const TextBoxes = styled.div``
+const TextBoxes = styled.div`
+
+`
+
+const Label = styled.div`
+color: #239C7B;
+font-weight: bold;`
+
+const Submit = styled.div`
+margin-top: 0.5rem;
+`
+

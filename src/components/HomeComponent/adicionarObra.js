@@ -56,22 +56,18 @@ import styled from 'styled-components';
   render() {
     return (
       <Wrapper>
-        <button onClick={this.handleClick}>Adicionar obra</button>
+        <Button>
+          <button onClick={this.handleClick}>Adicionar obra</button>
+        </Button>
         { this.state.mostrarComponente && <FormObra>
             <form onSubmit={this.cadastrar}>
               <FormHidden>
-              <Description>
-              <div>Nome da obra:</div>
-              <div>Endereço da obra: </div>
-              <div>Cliente: </div>
-              <div>Data de início: </div>
-              </Description>
               <TextBoxes>
-              <div><input type="text" value={this.state.nomeObra} onChange={(e) => this.setState({nomeObra: e.target.value})}/></div>
-              <div><input type="text" value={this.state.endereco} onChange={(e) => this.setState({endereco: e.target.value})}/></div>
-              <div><input type="text" value={this.state.cliente} onChange={(e) => this.setState({cliente: e.target.value})}/></div>
-              <div><input type="text" value={this.state.dataInicio} onChange={(e) => this.setState({dataInicio: e.target.value})}/></div>
-              <button type="submit">Cadastrar obra</button>
+              <div><Label>Nome da obra: </Label><input type="text" value={this.state.nomeObra} onChange={(e) => this.setState({nomeObra: e.target.value})}/></div>
+              <div><Label>Endereço da obra: </Label><input type="text" value={this.state.endereco} onChange={(e) => this.setState({endereco: e.target.value})}/></div>
+              <div><Label>Cliente: </Label><input type="text" value={this.state.cliente} onChange={(e) => this.setState({cliente: e.target.value})}/></div>
+              <div><Label>Data de início: </Label><input type="text" value={this.state.dataInicio} onChange={(e) => this.setState({dataInicio: e.target.value})}/></div>
+              <Submit><button type="submit">Cadastrar obra</button></Submit>
               </TextBoxes>
               </FormHidden>
             </form>
@@ -86,18 +82,52 @@ export default adicionarObra
 
 const Wrapper = styled.div`
 margin-top: 1.0rem;
+
+button{
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+}
 `
 
-const FormObra = styled.div`
+const Button = styled.div`
+margin-left: 3.0rem;
+` 
 
+const FormObra = styled.div`
+justify-content: center;
+align-items: center; 
+display:flex;
+flex-direction: row;
 `
 
 const FormHidden = styled.div`
-display:flex;`
-
-const Description = styled.div`` 
+display:flex;
+background: white;
+margin-top: 1.5rem;
+background: white;
+border-style: groove; 
+border-radius: 2px;
+width: auto;
+height: 200px;
+align-items: center; 
+justify-content: center;
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+padding-top: 1.5rem;
+padding-bottom: 1.5rem;
+`
 
 
 const TextBoxes = styled.div`
-padding-left: 1.5rem;
+
+`
+
+const Label = styled.div`
+color: #006666;
+font-weight: bold;
+`
+
+const Submit = styled.div`
+margin-top: 0.5rem;
 `

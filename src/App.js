@@ -21,8 +21,10 @@ function App() {
                   <SideMenu/>
                   <Main>
                     <Header/>
-                    <AdicionarObra/>
-                    <Obras/>
+                    <Body>
+                      <AdicionarObra/>
+                      <Obras/>
+                    </Body>
                   </Main>
               </Container>
             </Route>
@@ -56,26 +58,30 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
-background-color:#E5E5E5;
+
+
 `
 
 const Container = styled.div`
 width: 100%;
 height: 100vh;
-@media(max-width: 800px) {
-  height: auto;
-}
 display: flex;
 grid-template-rows: 25px auto;
 background-color:#E5E5E5;
+position: absolute;
 `
 
 const Main = styled.div`
 width: 100%;
-margin-left: 3.0rem;
-margin-right: 3.0rem;
+
 @media(max-width: 800px) {
   margin-left: 0;
   margin-right: 0;
 }
+`
+
+const Body = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
 `

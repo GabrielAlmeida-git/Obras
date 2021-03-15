@@ -55,14 +55,14 @@ class obras extends Component {
             <Obras key={item.nome}>
               <InfoObra>
                 <NomeObra>
-                  <h3>{item.nome} - {item.cliente}</h3>
+                  {item.nome} - {item.cliente}
                 </NomeObra>
                 <EnderecoObra>
-                  <h4>{item.endereco}</h4>
+                  {item.endereco}
                 </EnderecoObra>
               </InfoObra>
               <EditaObra>
-                <button onClick={() => this.editar(item.key)}>Editar</button>
+                <button onClick={() => this.editar(item.key)}>👁</button>
               </EditaObra>
             </Obras>
           )
@@ -80,38 +80,71 @@ class obras extends Component {
 export default obras
 
 const Container = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+flex-flow: row wrap;
+@media(max-width: 800px) {
+flex-flow: column nowrap;
+}
+justify-content: space-between;
+position: relative;
+overflow-y: scroll;
+height: 85vh;
 `
 
 const Obras = styled.div`
-padding-left: 1rem;
-padding-right: 1rem;
-display: grid;
-width: 100%;
-height: auto;
-border-style: outset;
-border-radius: 25px;
+margin-left: 4.0rem;
+margin-right: 4.0rem;
+width: 40%;
+@media(max-width: 800px) {
+  width: 80%;
+  margin-left: 1.0rem;
+margin-right: 1.0rem;
+  }
+height: 20vh;
+border-radius: 5px;
 margin-top: 1rem;
-display: flex;
-justify-content: space-between;
-align-items: center;
 background: white;
+display: flex;
+flex-direction: column;
 `
 
 const InfoObra = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100%;
 `
 
 const NomeObra = styled.div`
+font-family: bree serif;
+font-weight: bold;
+font-size: 25px;
+color: #006666;
 
 `
 
 const EnderecoObra = styled.div`
+color: #009933;
+font-family: bree serif;
+font-weight: bold;
+font-size: 15px;
+text-align: center;
+
 `
 
 const EditaObra = styled.div`
 button{
-  border-radius: 2px;
-  background: #239C7B;
+  background: #FFF;
+  font-size: 25px;
+  border: none;
+  color: #006666;
 }
+display: flex;
+justify-content: flex-end;
+text-align: right;
 `
 
 
