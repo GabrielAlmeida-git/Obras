@@ -173,8 +173,8 @@ p{
   text-align: center;
 }
 img{
-  width: 400px;
-  height: 250px;
+  width: 40.0rem;
+  height: 25.0rem;
   margin-right: 1.5rem;
 }
 `
