@@ -85,8 +85,10 @@ margin-top: 1.0rem;
 
 button{
   border-radius: 5px;
+  background: #FFF;
+  color: #006666;
+  height: 2.5rem;
   border: none;
-  text-decoration: none;
 }
 `
 
