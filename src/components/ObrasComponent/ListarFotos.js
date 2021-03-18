@@ -28,7 +28,7 @@ export default class ListarFotos extends Component {
       firebase.initializeApp(firebaseConfig);
     }
     
-    firebase.database().ref('images/'+this.state.url[3]).on('value', (snapshot) =>{
+    firebase.database().ref('images/'+this.state.url[2]).on('value', (snapshot) =>{
       let state = this.state;
       state.images = [];
       snapshot.forEach((childItem)=> {
