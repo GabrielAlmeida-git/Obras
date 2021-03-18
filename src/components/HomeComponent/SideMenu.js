@@ -66,6 +66,10 @@ justify-content: center;
 `
 
 const NavMenu = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 div{
   height: 2.0rem;
   align-items: center;
@@ -80,7 +84,7 @@ div{
     font-family: bree serif;
     font-size: 25px;
     @media(max-width: 800px) {
-      width: font-size: 15px;
+      font-size: 15px;
     }
     color: #d9d9d9;
     font-weight: bold;
