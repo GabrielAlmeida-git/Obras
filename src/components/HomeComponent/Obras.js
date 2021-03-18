@@ -96,12 +96,12 @@ height: 85vh;
 const Obras = styled.div`
 margin-left: 4.0rem;
 margin-right: 4.0rem;
-width: 40%;
+width: 30%;
 @media(max-width: 800px) {
   width: 80%;
   margin-left: 1.0rem;
-margin-right: 1.0rem;
-  }
+  margin-right: 1.0rem;
+}
 height: 20vh;
 border-radius: 5px;
 margin-top: 1rem;

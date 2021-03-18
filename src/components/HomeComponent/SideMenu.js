@@ -59,7 +59,7 @@ const Geral = styled.div`
 const User = styled.div`
 border-bottom: solid;
 border-color: grey;
-height: 5.0rem;
+height: 5rem;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -89,12 +89,12 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: flex-end;
-height: 60vh;
+height: 30rem;
 img{ 
-  width: 30%;
+  background: transparent;
+  width: 40%;
   @media(max-width: 800px) {
-  width: 50%;
-  
+  width: 80%;
     }
 }
 `

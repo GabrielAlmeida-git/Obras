@@ -28,7 +28,7 @@ export default class ListarFotos extends Component {
       firebase.initializeApp(firebaseConfig);
     }
     
-    firebase.database().ref('images/'+this.state.url[2]).on('value', (snapshot) =>{
+    firebase.database().ref('images/'+this.state.url[3]).on('value', (snapshot) =>{
       let state = this.state;
       state.images = [];
       snapshot.forEach((childItem)=> {
@@ -158,7 +158,6 @@ label{
 const Fotos = styled.div`
 display: flex;
 flex-direction: column;
-
   ` 
 
 const FotoList = styled.div`
@@ -166,6 +165,7 @@ display: flex;
 align-items: center;
 @media(max-width: 800px) {
   margin-left: 0;
+  flex-direction: column;
 }
 margin-left: 1.0rem;
 margin-top:1.0rem;
