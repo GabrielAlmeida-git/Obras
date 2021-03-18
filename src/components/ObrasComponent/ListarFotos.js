@@ -176,6 +176,11 @@ img{
   width: 40.0rem;
   height: 25.0rem;
   margin-right: 1.5rem;
+  @media(max-width: 800px) {
+    margin-right: 0;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 `
 
