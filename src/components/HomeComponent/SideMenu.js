@@ -83,9 +83,6 @@ div{
     text-align: center;
     font-family: bree serif;
     font-size: 25px;
-    @media(max-width: 800px) {
-      font-size: 15px;
-    }
     color: #d9d9d9;
     font-weight: bold;
   }
