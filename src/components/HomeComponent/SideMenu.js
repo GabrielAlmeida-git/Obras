@@ -70,6 +70,7 @@ div{
   height: 2.0rem;
   align-items: center;
   padding-top: 3.0rem;
+  width: 100%;
   button{
     background: #006666;
     border: 0; 
