@@ -1,9 +1,8 @@
 import firebase from 'firebase';
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import ListarFotos from './ListarFotos';
 
-class ObraDetail extends Component{
+class DetalhesFotos extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -48,57 +47,23 @@ class ObraDetail extends Component{
     const { key, nome, endereco, cliente, dataInicio} = this.state;
     return(
       <Wrapper>
-        <NavMenu>
-          <div> <button>Visão Geral</button></div> <div> <button onClick={() => this.atualizacoes(key)}>Atualizações</button></div>
-        </NavMenu>
-        <Geral>
             <Main key={key}>
               <div>Obra: {nome}</div><div>Endereço: {endereco}</div><div>Cliente: {cliente}</div><div>Data de inicio: {dataInicio}</div>
               </Main>
-              <FotoSection>
-                <ListarFotos/>
-              </FotoSection>
-            </Geral>
       </Wrapper>
     )
   }
 }
 
-export default ObraDetail
+export default DetalhesFotos
 
 
 const Wrapper = styled.div`
-width: 100%;
-overflow-y: scroll;
-height: 85vh;
+width: 80%;
+height: auto;
 display: flex;
 flex-direction: column;
 align-items: center;
-`
-
-const Geral = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 80%;
-`
-
-
-const NavMenu = styled.div`
-width: 80%;
-display: flex;
-justify-content: space-between;
-margin-top: 1.5rem;
-button{ 
-  background: none;
-  border: none;
-  font-size: 20px;
-  font-family: bree serif;
-  font-weight: bold;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 `
 
 const Main = styled.div`
@@ -110,12 +75,4 @@ padding-left: 1.5rem;
 font-family: bree serif;
 font-size: 18px;
 font-weight: bold;
-
 ` 
-
-
-const FotoSection = styled.div`
-width: 100%;
-padding-right: 1.5rem;`
-
-

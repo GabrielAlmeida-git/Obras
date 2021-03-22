@@ -2,6 +2,7 @@ import firebase from 'firebase';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import AdicionarUpdate from './AdicionarUpdate';
+import DetalhesFotos from './DetalhesFotos';
 
 class ObraUpdate extends Component {
   constructor(props){
@@ -51,6 +52,7 @@ atualizacoes = () => {
       <NavMenu>
        <div> <button onClick={() => this.atualizacoes()}>Visão Geral</button> </div>  <div><button>Atualizações</button></div>
       </NavMenu>
+      <DetalhesFotos/>
       <AdicionarUpdate/>
           <Main>
           {this.state.updates.map((item)=>{
