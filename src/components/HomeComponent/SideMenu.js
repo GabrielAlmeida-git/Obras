@@ -23,6 +23,7 @@ import LogoCerta from '../../assets/logo2.png';
           <User>
             Conta
           </User>
+          <Sider>
           <NavMenu>
             <div><button onClick={() => this.home()}>Home</button></div>
             <div><button>Tarefas</button></div>
@@ -31,6 +32,7 @@ import LogoCerta from '../../assets/logo2.png';
           <Logo>
             <img src={LogoCerta} alt='logoCerta'/>
           </Logo>
+          </Sider>
         </Geral>
       </Wrapper>
     )
@@ -65,6 +67,13 @@ align-items: center;
 justify-content: center;
 `
 
+const Sider = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+height: 80vh;`
+
 const NavMenu = styled.div`
 display: flex;
 flex-direction: column;
@@ -97,7 +106,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: flex-end;
-height: 30rem;
 img{ 
   background: transparent;
   width: 40%;

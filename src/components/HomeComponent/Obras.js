@@ -90,7 +90,7 @@ flex-flow: column nowrap;
 justify-content: space-between;
 position: relative;
 overflow-y: scroll;
-height: 85vh;
+height: 70vh;
 `
 
 const Obras = styled.div`
